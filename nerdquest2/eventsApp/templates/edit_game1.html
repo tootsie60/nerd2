@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+      integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+      crossorigin="anonymous"
+    />
+    <title>Updating the event</title>
+  </head>
+
+  <body>
+    {% if messages %}
+    <div class="container">
+      {% for message in messages %} {{message}} {% endfor %}
+    </div>
+    {%endif%}
+    <header style="position: relative; display: flex">
+      <h1>Modify the Game</h1>
+      <h5><a href="/logout">Logout</a></h5>
+    </header>
+
+    <form class="card p-3 bg-light" action="/games/{{game.id}}/update" method="POST">
+      {% csrf_token %}
+      <div  class = " ">
+        <label for="gameType">Type of Game:</label>
+        <input type="text" name="gameType" id="gameType" />
+      </div>
+      {% comment %} Date of Event {% endcomment %}
+      <div  class = " ">
+        <label for="date">Game Date:</label>
+        <input type="date" name="date" id="" />
+      </div>
+      <div  class = " ">
+        <label for="start">Game Starting Time:</label>
+        <input type="time" name="startTime" id="start" />
+      </div>
+
+      <div  class = " "> 
+        <label for="end">Game Ending Time:</label>
+        <input type="time" name="endTime" id="end" />
+      </div>
+      <div  class = " "> 
+        <label for="location">Location:</label>
+        <input type="text" name="location" id="location" />
+      </div>
+
+      <div  class = " "> 
+        <label for="notes">Notes:</label>
+        <input type="textarea" name="notes" id="notes" />
+      </div>
+
+      <div  class = " ">
+        <a href="/games">Cancel</a>
+      </div>
+      <div  class = " ">
+        <input type="submit" value="Submit" />
+      </div>
+    </form>
+  </body>
+</html>

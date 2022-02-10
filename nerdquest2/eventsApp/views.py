@@ -150,6 +150,52 @@ def leave_game(request, id):
     return redirect(
         '/games')
 
+# def edit(request, id):
+    
+#     context = {
+#         # 'game': Game.objects.get(id=game_id),
+#         'one_game': Game.objects.get(id=id),
+#         # 'game': Game.objects.get(id=request.session['game_id']),
+#         'creator': User.objects.get(id=request.session['user_id'])
+#     }
+#     return render(request, 'edit_game.html', context)
+
+def edit(request, id):
+    if 'user_id' not in request.session:
+        return redirect('/')
+
+    # get the clicked group
+    context = {
+        'one_game': Game.objects.get(id=id),
+        'user': User.objects.get(id=request.session['user_id'])
+    }
+    return render(request, 'edit_game.html', context)
+
+def update(request, id):
+    if 'user_id' not in request.session:
+        return redirect('/')
+    if request.method == 'POST':
+        user = User.objects.get(id=request.session['user_id'])
+        # game = Game.objects.get(id=request.session['id'])
+        # to_update = Game.objects.get(id=id)
+        # to_update.gameType = request.POST['gameType']
+        # to_update.date = request.POST['date']
+        # to_update.startTime = request.POST['startTime']
+        # to_update.endTime = request.POST['endTime']
+        # to_update.location = request.POST['location']
+        # to_update.notes = request.POST['notes']
+        game = Game.objects.get(id=id)
+        game.gameType = request.POST['gameType']
+        game.date = request.POST['date']
+        game.startTime = request.POST['startTime']
+        game.endTime = request.POST['endTime']
+        game.location = request.POST['location']
+        game.notes = request.POST['notes']
+        
+        Game.save()
+        
+        return redirect('/games/')
+
 
 def delete(request, id):
     if 'user_id' not in request.session:
