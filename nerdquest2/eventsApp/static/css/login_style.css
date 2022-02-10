@@ -1,0 +1,16 @@
+h1 {
+    color: green;
+}
+
+
+body {
+    background-color: aqua;
+    flex-direction: row;
+
+}
+div{
+    border: 2px dashed black;
+}
+.row {
+    flex-wrap: nowrap;
+}

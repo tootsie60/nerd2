@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" href="static/css/welcome.css">
+</head>
+<body>
+    <div class="wrapper">
+
+        <nav class="main-nav">
+            <ul>
+                <li>Upload Avatar</li>
+                <li>Welcome {{first_name}}</li>                
+                <li><a href="/logout">Logout</a></li>                
+            </ul>
+        </nav>      
+        
+        <section class="boxes">
+            <div class="box">
+                 
+                <a href="/yours">
+                <h2>Your Games</h2></a>
+            </div>
+            <div class="box">
+                <a href="/new"><h2>Organize a game</h2></a> 
+            </div>
+            <div class="box">
+                <a href="/games"><h2>Upcoming Games</h2></a> 
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>NerdQuest &copy; 2022</p>
+        </footer>        
+    </div>
+</body>
+</html>

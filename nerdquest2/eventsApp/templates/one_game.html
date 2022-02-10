@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Game </title>
+        <link rel="stylesheet" href="{% static 'style.css ' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+            integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+            integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+            crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div id="container">
+            <div id="heading">
+                <h1>{{one_game.gameType}}</h1>
+                <a href="/games">Dashboard</a>
+                <a href="/logout">Logout</a>
+
+            </div>
+            <h6>{{one_game.notes}}</h6>
+            <h3>Game Event Creator:</h3>
+            <h3>{{one_game.creator.first_name}} {{one_game.creator.last_name}}</h3>
+            {% if user in one_game.participants.all %}
+            <a class="btn btn-danger" href="/leave/{{one_game.id}}">Delete Game </a>
+            {% else %}
+            <a class="btn btn-primary" href="/join/{{one_game.id}}">Join Game</a>
+            {% endif %}
+            <h3>Game Participants:</h3>
+            <ul>
+                {% for participant in one_game.participants.all %}
+                <li>{{participant.first_name}} {{participant.last_name}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </body>
+
+</html>
