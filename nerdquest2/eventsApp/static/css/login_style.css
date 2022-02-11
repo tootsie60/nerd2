@@ -17,8 +17,8 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;    
-    background: linear-gradient(to bottom, black, #01061d, #020929, #fa1404, black, #01061d, #020929, #fa1404)
+    min-height: 100vh;    background: linear-gradient(to bottom, black, #01061d, #020929, #fa1404, black, #01061d, #020929, #fa1404)
+    
 }
 
 .box {
