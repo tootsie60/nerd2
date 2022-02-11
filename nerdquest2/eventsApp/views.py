@@ -156,7 +156,7 @@ def update(request, id):
     print(to_update)
     
 
-    return redirect('/yours')
+    return redirect('/games')
 
 
 def your_games(request):

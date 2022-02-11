@@ -20,13 +20,13 @@
                     <h1>Registration</h1>
                     <form action="/register" method="POST">
                         {% csrf_token %}
-                        {% if messages %}
+                        {% comment %} {% if messages %}
                         <ul class="messages">
                             {% for message in messages %}
                             <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
                             {% endfor %}
                         </ul>
-                        {% endif %}
+                        {% endif %} {% endcomment %}
                         <table>
                             <tr>
                                 <td><label for="first_name" class="form-label">First Name</label></td>

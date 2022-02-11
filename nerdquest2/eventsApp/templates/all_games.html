@@ -53,9 +53,9 @@
             {% if game.creator.id == current_user.id %}
             <form action="/games/delete/{{game.id}}" method="POST">
               {% csrf_token %}
-              <input class="btn btn-secondary" type="Submit" value="Delete" />
+              {% comment %} <input class="btn btn-secondary" type="Submit" value="Delete" /> {% endcomment %}
             </form>
-           <a href="/edit/{{game.id}}"> <button class="btn btn-secondary">Edit</button></a>
+           {% comment %} <a href="/edit/{{game.id}}"> <button class="btn btn-secondary">Edit</button></a> {% endcomment %}
             {% endif %} {% endfor %}
           </div>
         </div>
