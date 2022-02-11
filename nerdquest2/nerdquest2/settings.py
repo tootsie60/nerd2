@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'users',
     'eventsApp',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -117,5 +118,20 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
+# STATICFILES_DIRS =[
+#     os.path.join(BASE_DIR, 'static')
+
+# ]
 
 STATIC_URL = '/static/'
+
+# STATIC_ROOT = [
+#     os.path.join(BASE_DIR, 'static_cdn')
+# ]
+# 
+# GOOGLE_API_KEY ="AIzaSyDhJbVHh5JUWiw80VLRlQNf0cG-ccBKWeM"
+# 
+# RECAPTCHA_KEY = "6LeiIm8eAAAAADEALwzFq2CPCGgC2ayx-uW5xHZE"
+# 
+# 
+# RECAPTCHA_SECRET_KEY = "6LeiIm8eAAAAAOdMt3c9l-2Liw20_eNy4SKCO_jE"
