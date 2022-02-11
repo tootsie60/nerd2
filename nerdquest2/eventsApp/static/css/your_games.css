@@ -111,7 +111,7 @@ table th, td {
 
 
 a {
-    display
+    display: flex;
     text-decoration: none; 
     color: purple transparent;
     font-weight: bold;

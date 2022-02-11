@@ -59,6 +59,13 @@ section {
     margin-bottom: 40px;
 }
 
+.form h2:hover {
+    color: rgba(252,69,140,1);
+    text-shadow:
+        0 0 0.1em rgba(139, 78, 252, 1),
+        0 0 0.45em rgba(139, 78, 252, 0.7); 
+}
+
 .form h2::before {
     content: " ";
     position: absolute;    
@@ -67,6 +74,10 @@ section {
     width: 150px;
     height: 4px;
     background: #01061d;
+}
+
+.form h2::before:hover {
+    color: rgba(252,69,140,1);
 }
 
 .form .inputBox {
@@ -94,7 +105,7 @@ section {
 }
 
 .form .inputBox input:hover {
-    background: rgba(255,229,59,1);
+    background: rgba(252,69,140,0.3);
 }
 
 .form .inputBox input::placeholder {
@@ -112,6 +123,10 @@ section {
     cursor: pointer;
     margin-bottom: 20px;
     font-weight: 600px;
+}
+
+.form .inputBox input[type="submit"]:hover {
+    background: rgba(252,69,140,1);
 }
 
 
