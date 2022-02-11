@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body {    
+    overflow: hidden;
+    background: #01061d;
+}
+
+.main-nav ul {
+    display: grid;
+    grid-gap: 20px;
+    padding: 0px;
+    list-style: none;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    /*is the margin-right necessary?*/
+    /*margin-right: 10px;  */  
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    background: #01061d;
+    border: 3px solid rgba(255,37,37,0.7);    
+    border-radius: 15px;    
+}
+
+.main-nav ul li {
+    color: rgba(255,229,59,1);    
+}
+
+.main-nav ul li:nth-child(1) {
+    font: 1.5em sans-serif;
+}
+
+.main-nav ul li:nth-child(2) {
+    font: 2em sans-serif;
+}
+
+.main-nav ul li:nth-child(3) {
+    font: 1.5em sans-serif;      
+}
+
+.main-nav ul li:nth-child(4) {
+    font: 1.5em sans-serif;      
+}
+
+.main-nav ul li:nth-child(5) {
+    font: 1.5em sans-serif;      
+}
+
+.main-nav ul li:nth-child(6) {
+    font: 1.5em sans-serif;      
+}
+
+.main-nav ul li:nth-child(2) a {
+    text-decoration: none; 
+    color: purple transparent;
+    font-weight: bold;
+}
+
+.main-nav ul li:nth-child(3) a {
+    text-decoration: none; 
+    color: purple transparent;
+    font-weight: bold;
+}
+
+.main-nav ul li:nth-child(4) a {
+    text-decoration: none; 
+    color: purple transparent;
+    font-weight: bold;
+}
+
+.main-nav ul li:nth-child(5) a {
+    text-decoration: none; 
+    color: purple transparent;
+    font-weight: bold;
+}
+
+.main-nav ul li:nth-child(6) a {
+    text-decoration: none; 
+    color: purple transparent;
+    font-weight: bold;
+}
+
+.main-nav ul li:nth-child(2) a:hover{    
+    color: rgba(252,69,140,1);
+}
+
+.main-nav ul li:nth-child(3) a:hover{    
+    color: rgba(252,69,140,1);
+}
+
+.main-nav ul li:nth-child(4) a:hover{    
+    color: rgba(252,69,140,1);
+}
+
+.main-nav ul li:nth-child(5) a:hover{    
+    color: rgba(252,69,140,1);
+}
+
+.main-nav ul li:nth-child(6) a:hover{    
+    color: rgba(252,69,140,1);
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;    
+    background: linear-gradient(to bottom, #01061d, rgb(223, 108, 223), #dff1ff)
+}
+
+section .color {
+    position: absolute;
+    filter: blur(150px);
+}
+
+.box {
+    position: relative;
+    padding: 40px;    
+}
+
+.box .square {
+    position: absolute;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    /* take out animation if take out squares */
+    animation: animate 10s linear infinite;
+    animation-delay: calc(-1s * var(--i));
+}
+
+/* take out keyframes if take out animation & squares */
+@keyframes animate {
+    0%, 100% 
+    {
+        transform: translateY(-40px);
+    }
+    50% 
+    {
+        transform: translateY(40px);
+    }
+}
+
+.box .square:nth-child(1) {
+    top: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+}
+
+.box .square:nth-child(2) {
+    top: 150px;
+    left: -60px;
+    width: 120px;
+    height: 120px;
+    z-index: 2;
+}
+
+.box .square:nth-child(3) {
+    top: 300px;
+    right: -20px;
+    width: 80px;
+    height: 80px;
+    z-index: 2;
+}
+
+.box .square:nth-child(4) {
+    bottom: -20px;
+    left: 100px;
+    width: 50px;
+    height: 50px;    
+}
+
+.box .square:nth-child(5) {
+    top: -40px;
+    left: 140px;
+    width: 60px;
+    height: 60px;    
+}
+
+.container {
+    position: relative;
+    width: 400px;
+    min-height: 400px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.form {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+}
+
+.form h2 {
+    position: relative;
+    color: #01061d;
+    font-size: 1.5rem;
+    font-weight: 600px;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+.form h2:hover {
+    color: rgba(252,69,140,1);
+    text-shadow:
+        0 0 0.1em rgba(139, 78, 252, 1),
+        0 0 0.45em rgba(139, 78, 252, 0.7); 
+}
+
+.form h2::before {
+    content: " ";
+    position: absolute;    
+    left: 0;
+    bottom: -10px;
+    width: 265px;
+    height: 4px;
+    background: #01061d;
+}
+
+.form .inputBox {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: right;
+}
+
+.form .inputBox input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    outline: none;
+    padding: 10px 10px;
+    border-radius: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);    
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #01061d;
+    box-shadow: 0 5px 15px rgba(104, 103, 103, 0.5);
+}
+
+.form .inputBox input:hover {
+    background: rgba(252,69,140,0.3);
+}
+
+.form .inputBox input::placeholder {
+    color: #01061d;
+}
+
+.form .inputBox input[type="submit"] {
+    background: rgba(255, 255, 255, 0.5);
+    color: #01061d;
+    display: flex;
+    justify-content: center;
+    max-width: 100px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-weight: 600px;
+}
+
+.form .inputBox input[type="submit"]:hover {
+    background: rgba(252,69,140,1);
+}
