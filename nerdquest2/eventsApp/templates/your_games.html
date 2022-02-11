@@ -5,58 +5,66 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=div, initial-scale=1.0">
-        <title>Your Games</title>
+        <!--<title>Your Games</title>-->
         {% load static%}
-        <link rel="stylesheet" href="{% static 'css/showstyle' %}">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
-            integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
-            integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/static/css/your_games.css">
+        <!--<img src="/static/css/gamenight.png">-->
+        <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+            integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">-->
+        
     </head>
 
     <body>
-        <div class="container">
-            <div id="container">
-                <div id="heading">
-                    <h1>{{one_game.gameType}}</h1>
-                    <a href="/games">Dashboard</a>
-                    <a href="/yours">Game Events Created By You</a>
-                    <a href="/logout">Logout</a>
-    <h2>Hi {{current_user.first_name}}</h2>
-                </div>
-           
-            <table class="table table- primary">
-                <tr>
-                    <th>Type OF Game</th>
-                    <th>Date</th>
-                    <th>Start Time</th>
-                    <th>End Time</th>
-                    <th>Location</th>
-                    <th>Description</th>
+        <div class="wrapper">
+            <div id="">
 
-                </tr>
+                <nav class="main-nav">
+                    <ul>
+                        <li>Upload Avatar</li>
+                        <li><a href="/games">Game Event Dashboard</a></li>
+                        <li><a href="/welcome">Home</a></li>                        
+                        <li><a href="/logout">Logout</a></li>                
+                    </ul>
+                </nav>  
+
+                <div class="heading">
+                    <h1>Hi {{current_user.first_name}}!</h1>
+                    <h2>Here are your games {{one_game.gameType}}</h2>
+                </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type of Game</th>
+                        <th>Date</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Location</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
                 {% for game in your_games %}
-                <tr>
-                    
-                    <td><a href="/games/{{ game.id }}">
+                
+                    <tr>
+                        <td><a href="/games/{{ game.id }}">
                         <h2>{{game.gameType}}</h2>
-                    </td>
-                    <td>{{game.date}}</td>
-                    <td>{{game.startTime}}</td>
-                    <td>{{game.endTime}}</td>
-                    <td>{{game.location}}</td>
-                    <td>{{game.notes}}</td>
-                 </tr>
+                        </td>
+                        <td>{{game.date}}</td>
+                        <td>{{game.startTime}}</td>
+                        <td>{{game.endTime}}</td>
+                        <td>{{game.location}}</td>
+                        <td>{{game.notes}}</td>
+                    </tr>
                 {% endfor %}
+                </tbody>
             </table>
 
-            <a href="/new">Add A New Game</a>
+            <a href="/new" class="fauxBtn">Add A New Game</a>
         </div>
-
+        <!--<footer class="footer">
+            <p>NerdQuest &copy; 2022</p>
+        </footer>-->
     </body>
 
 </html>

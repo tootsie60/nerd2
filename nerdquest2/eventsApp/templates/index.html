@@ -2,63 +2,24 @@
 <html lang="en">
 
     <head>
-         <meta charset="UTF-8">
+        <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login and Registration</title>
         {% load static %}
         
-        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link rel="stylesheet" href="/static/css/login_style.css">
     
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    </head>
-     <body>
-        <div class="container">
-             <div class="row">
-                <div class="col-6">
-                    <h1>Registration</h1>
-                    <form action="/register" method="POST">
-                        {% csrf_token %}
-                        {% comment %} {% if messages %}
-                        <ul class="messages">
-                            {% for message in messages %}
-                            <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-                            {% endfor %}
-                        </ul>
-                        {% endif %} {% endcomment %}
-                        <table>
-                            <tr>
-                                <td><label for="first_name" class="form-label">First Name</label></td>
-                                <td><input type="text" name="first_name" id="" class="form-control"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="last_name" class="form-label">Last Name</label></td>
-                                <td><input type="text" name="last_name" id="" class="form-control"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="email" class="form-label">Email</label></td>
-                                <td><input type="text" name="email" id="" class="form-control"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="password" class="form-label">Password</label></td>
-                                <td><input type="password" name="password" id="" class="form-control"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="confirm_pw" class="form-label">Confirm Password</label></td>
-                                <td><input type="password" name="confirm_pw" id="" class="form-control"></td>
-                            </tr>
-                            <td></td>
-                            <td><button class="btn btn-primary">Register</button></td>
-                        </table>
-                    </form>
-                </div>
-                <!-- <div class="row"> -->
-                <div class="col-6">
-                    <h1>Login</h1>
-                    <form action="/login" method="POST">
-                        {% csrf_token %}
-                        <table>
+        
+</head>
+    <body>
+        <section>
+            <div class="box">
+                <div class="container">
+                    <div class="form">                
+                        <h2>Registration</h2>
+                        <form action="/register" method="POST">
+                            {% csrf_token %}
                             {% if messages %}
                             <ul class="messages">
                                 {% for message in messages %}
@@ -66,20 +27,58 @@
                                 {% endfor %}
                             </ul>
                             {% endif %}
-                            <tr>
-                                <td><label for="email" class="form-label">Email</label></td>
-                                <td><input type="text" name="email" id="" class="form-control"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="password" class="form-label">Password</label></td>
-                                <td><input type="password" name="password" id="" class="form-control"></td>
-                            </tr>
-                            <td></td>
-                            <td><button class="btn btn-primary">Log In</button></td>
-                        </table>
-                    </form>
+                        
+                            
+                            <div class="inputBox">
+                                <input type="text" name="first_name" id="" placeholder="First Name">
+                            </div>
+                            <div class="inputBox">                                
+                                <input type="text" name="last_name" id="" placeholder="Last Name">
+                            </div>
+                            <div class="inputBox">                 
+                                <input type="text" name="email" id="" placeholder="Email">
+                            </div>
+                            <div class="inputBox">                                
+                                <input type="password" name="password" id="" placeholder="Password">
+                            </div>
+                            <div class="inputBox">                               
+                                <input type="password" name="confirm_pw" id="" placeholder="Confirm Password">
+                            </div>
+                            <div class="inputBox">
+                                <input type="submit" value="Register">
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-     </body>
- </html>
+
+            <div class="box">
+                <div class="container">
+                    <div class="form">
+                        <h2>Login</h2>
+                        <form action="/login" method="POST">
+                            {% csrf_token %}
+                            {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+
+                            <div class="inputBox">
+                                <input type="text" name="email" id="" placeholder="Email">
+                            </div>
+                            <div class="inputBox">                                    
+                                <input type="password" name="password" id="" placeholder="Password">
+                            </div>
+                            <div class="inputBox">
+                                <input type="submit" value="Login">
+                            </div>
+                        </form>                        
+                    </div>
+                </div>
+            </div> 
+        </section>
+    </body>
+</html>

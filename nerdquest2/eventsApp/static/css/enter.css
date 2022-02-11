@@ -9,7 +9,7 @@
 }
 
 body {
-    display: grid;
+    display: grid;    
     background: #01061d;
 }
 
@@ -19,7 +19,7 @@ video {
     transform: translateY(-50%);
 }
 
-.text {
+.text {    
     width: 80%;
     position: absolute;
     top: 50%;
@@ -98,6 +98,7 @@ span:nth-child(9){
     font-size: 4rem;
     text-transform: uppercase;
     
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -119,6 +120,17 @@ span:nth-child(9){
     position: relative;
 
     transition: background-color 100ms linear;
+
+    animation: reveal 7.5s linear forwards;
+    opacity: 0;
+    filter: blur(13px);
+}
+
+@keyframes reveal {
+    100%{
+        opacity: 1;
+        filter: blur(0);
+    }
 }
 
 .neon-button::before {
@@ -147,3 +159,11 @@ span:nth-child(9){
 .neon-button:hover::after {
     opacity: 1;
 }
+
+/*.footer {
+    position: relative;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
