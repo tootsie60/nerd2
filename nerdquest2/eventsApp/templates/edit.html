@@ -43,16 +43,16 @@
         {% comment %} Date of Event {% endcomment %}
         <div class=" ">
           <label for="date">Game Date:</label>
-          <input type="date" name="date" id="" value="{{game.date}}" />
+          <input type="date" name="date" id="" value="{{game.date|date:'Y-m-d'}}" />
         </div>
         <div class=" ">
           <label for="start">Game Starting Time:</label>
-          <input type="time" name="startTime" id="start" value={{  value|time:"H:i"}} />
+          <input type="time" name="startTime" id="start" value="{{game.startTime|time:'H:i'}}" />
         </div>
 
         <div class=" ">
           <label for="end">Game Ending Time:</label>
-          <input type="time" name="endTime" id="end" value="{{"H:i"}}" />
+          <input type="time" name="endTime" id="end" value="{{game.endTime|time:'H:i'}}" />
         </div>
         <div class=" ">
           <label for="location">Location:</label>

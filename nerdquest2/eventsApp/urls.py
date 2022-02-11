@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
 
+
+ 
 urlpatterns = [
     path('', views.enter),
     path('index', views.index),
@@ -15,7 +17,7 @@ urlpatterns = [
     path('games', views.games),
     path('games/<int:id>', views.one_game),
     path('yours', views.your_games),
-    path('edit/<int:id>', views.edit),
+    path('edit/<int:game_id>', views.edit),
     path('update/<int:id>', views.update),
      
     path('join/<int:id>', views.join_game),

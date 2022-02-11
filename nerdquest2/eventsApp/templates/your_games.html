@@ -36,15 +36,14 @@
                     <th>Start Time</th>
                     <th>End Time</th>
                     <th>Location</th>
-                    <th>Description/th>
+                    <th>Description</th>
 
                 </tr>
                 {% for game in your_games %}
                 <tr>
                     
                     <td><a href="/games/{{ game.id }}">
-                        <h4>{{game.gameType}}</h4>
-                        </a> 
+                        <h2>{{game.gameType}}</h2>
                     </td>
                     <td>{{game.date}}</td>
                     <td>{{game.startTime}}</td>
