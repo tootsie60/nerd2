@@ -93,6 +93,10 @@ section {
     box-shadow: 0 5px 15px rgba(104, 103, 103, 0.5);
 }
 
+.form .inputBox input:hover {
+    background: rgba(255,229,59,1);
+}
+
 .form .inputBox input::placeholder {
     color: #01061d;
     font-weight: bold;
@@ -109,3 +113,5 @@ section {
     margin-bottom: 20px;
     font-weight: 600px;
 }
+
+

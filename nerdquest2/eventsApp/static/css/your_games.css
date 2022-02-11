@@ -2,16 +2,15 @@
 
 *
 {
-    margin: 10;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans', sans-serif;    
 }
-
 
 body {    
     margin: 0px 20px;
-    background: #01061d;
+    /*background: #01061d;*/
 }
 
 .wrapper {
@@ -24,9 +23,9 @@ body {
     grid-gap: 20px;
     padding: 0px;
     list-style: none;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
     /*is the margin-right necessary?*/
-    margin-right: 10px;    
+    /*margin-right: 10px;  */  
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -45,11 +44,21 @@ body {
 }
 
 .main-nav ul li:nth-child(2) {
-    font: 3em sans-serif;
+    font: 2em sans-serif;
 }
 
 .main-nav ul li:nth-child(3) {
     font: 1.5em sans-serif;      
+}
+
+.main-nav ul li:nth-child(4) {
+    font: 1.5em sans-serif;      
+}
+
+.main-nav ul li:nth-child(2) a {
+    text-decoration: none; 
+    color: purple transparent;
+    font-weight: bold;
 }
 
 .main-nav ul li:nth-child(3) a {
@@ -58,72 +67,61 @@ body {
     font-weight: bold;
 }
 
+.main-nav ul li:nth-child(4) a {
+    text-decoration: none; 
+    color: purple transparent;
+    font-weight: bold;
+}
+
+.main-nav ul li:nth-child(2) a:hover{    
+    color: rgba(252,69,140,1);
+}
+
 .main-nav ul li:nth-child(3) a:hover{    
     color: rgba(252,69,140,1);
 }
 
-.boxes {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    min-height: 700px;
+.main-nav ul li:nth-child(4) a:hover{    
+    color: rgba(252,69,140,1);
 }
 
-.box {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    display: flex;
-    justify-content: center;
+.heading {
+    margin: 10px;
+    display: grid;
     align-items: center;
-    background: rgba(0, 0, 0, 0.5);
+    color: #ff1818;
+}
+
+table {
+    box-shadow: 0 5px 10px rgba(252,69,140,0.8);
+    background-color: rgba(186, 151, 252, 0.7);
+    text-align: left;
     overflow: hidden;
-    border-radius: 20px;
-    margin: 20px;
 }
 
-.box::before {
-    content: '';
-    position: absolute;
-    width: 160px;
-    height: 140%;    
-    background: linear-gradient(90deg, rgba(255,229,59,1) 0%, rgba(252,69,140,1) 50%, rgba(255,37,37,1) 100%);    
-    animation: animate 4s linear infinite;
+table thead, tbody {
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    justify-content: space-around;
+    /*align-items: center;*/
 }
 
-.box::after {
-    content: '';
-    position: absolute;
-    inset: 5px;
-    background: #01061d;
-    border-radius: 16px;
-}
-@keyframes animate {
-    0%
-    {
-        transform: rotate(0deg);
-    }
-    100%
-    {
-        transform: rotate(360deg);
-    }
+table th, td {
+    padding: 1rem 3rem;
 }
 
-.box h2 {
-    position: relative;
-    color: #fa1404;    
-    font-size: 2em;
-    z-index: 10;
-}
 
-.box a {
+a {
+    display
     text-decoration: none; 
+    color: purple transparent;
+    font-weight: bold;
 }
 
-.footer {
+/*.footer {
+    min-height: 5vh;
     color: #fa1404;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    
+}*/
