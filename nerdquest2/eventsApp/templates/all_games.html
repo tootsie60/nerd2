@@ -1,51 +1,42 @@
-{% extends 'base.html' %} 
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/all_games.css">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+
 
 <body>
-    <div class="container">
-        <div id="heading">
+
+    <nav class="main-nav">
+      <ul>
+          <li>Upload Avatar</li>
+          <li><a href="/games">Game Event Dashboard</a></li>
+          <li><a href="/yours">Your Games</a></li>                   
+          <li><a href="/welcome">Home</a></li>                        
+          <li><a href="/logout">Logout</a></li>                
+      </ul>
+    </nav> 
+
+    <div class="container">   
+
+        <div>
           <h1>Hi {{current_user.first_name}} {{current_user.last_name}}!</h1>
-          <a href="/logout">Logout</a>
+        </div>          
+
+        <div class="main_content"> 
+          <h2>Here are the games you may join:</h2>
         </div>
-    </div>
-   
-      {% comment %}
-      <table class="table table- primary">
-        <tr>
-          <th>Type OF Game</th>
-          <th>Date</th>
-          <th>Start Time</th>
-          <th>End Time</th>
-          <th>Location</th>
-          <th>Description/th></th>
-        </tr>
-
-        {% for game in all_games %}
-        <tr>
-          <td>
-            <a href="/games/{{ game.id }}">
-              <h4>{{game.gameType}}</h4>
-            </a>
-          </td>
-          <td>{{game.date}}</td>
-          <td>{{game.startTime}}</td>
-          <td>{{game.endTime}}</td>
-          <td>{{game.location}}</td>
-          <td>{{game.notes}}</td>
-        </tr>
-        {% endfor %}
-      </table>
-      {% endcomment %}
-      <div class="row">
-        <div class= >
-          <div id="main_content">
-             
-
-            <h3>Here are the games you may join:</h3>
-          </div>
           <div class="games">
             {% for game in all_games %}
-            <a href="/games/{{ game.id }}">
+            <a class="invisible" href="/games/{{ game.id }}">
               <h4>{{game.gameType}}</h4>
             </a>
             <p>Participants: {{game.participants.count}}</p>
@@ -60,15 +51,44 @@
           </div>
         </div>
 
-        <a href="/new">Add A New Game</a>
-        <a href="/yours">Game Events Created By You</a>
-        <a href=""
-        
+                
       </div>
 
       
 
-      {% endblock %}
+     
     </div>
   </div>
+    <!--</div>
+              
+                  {% comment %}
+                  <table class="table table- primary">
+                    <tr>
+                      <th>Type OF Game</th>
+                      <th>Date</th>
+                      <th>Start Time</th>
+                      <th>End Time</th>
+                      <th>Location</th>
+                      <th>Description/th></th>
+                    </tr>
+
+                    {% for game in all_games %}
+                    <tr>
+                      <td>
+                        <a href="/games/{{ game.id }}">
+                          <h4>{{game.gameType}}</h4>
+                        </a>
+                      </td>
+                      <td>{{game.date}}</td>
+                      <td>{{game.startTime}}</td>
+                      <td>{{game.endTime}}</td>
+                      <td>{{game.location}}</td>
+                      <td>{{game.notes}}</td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                  {% endcomment %}
+                  <div class="row">
+                    <div class= >-->
 </body>
+
