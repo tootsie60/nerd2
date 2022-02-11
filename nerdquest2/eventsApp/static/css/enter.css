@@ -98,7 +98,7 @@ span:nth-child(9){
     font-size: 4rem;
     text-transform: uppercase;
     
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -147,4 +147,11 @@ span:nth-child(9){
 
 .neon-button:hover::after {
     opacity: 1;
+}
+
+.footer {
+    color: #fa1404;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
