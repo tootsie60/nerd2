@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=div, initial-scale=1.0">
-        <title>All Games</title>
+        <title>Your Games</title>
         {% load static%}
         <link rel="stylesheet" href="{% static 'css/showstyle' %}">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
@@ -20,6 +20,14 @@
 
     <body>
         <div class="container">
+            <div id="container">
+                <div id="heading">
+                    <h1>{{one_game.gameType}}</h1>
+                    <a href="/games">Dashboard</a>
+                    <a href="/yours">Game Events Created By You</a>
+                    <a href="/logout">Logout</a>
+    <h2>Hi {{current_user.first_name}}</h2>
+                </div>
            
             <table class="table table- primary">
                 <tr>
@@ -28,15 +36,14 @@
                     <th>Start Time</th>
                     <th>End Time</th>
                     <th>Location</th>
-                    <th>Description/th>
+                    <th>Description</th>
 
                 </tr>
                 {% for game in your_games %}
                 <tr>
                     
                     <td><a href="/games/{{ game.id }}">
-                        <h4>{{game.gameType}}</h4>
-                        </a> 
+                        <h2>{{game.gameType}}</h2>
                     </td>
                     <td>{{game.date}}</td>
                     <td>{{game.startTime}}</td>

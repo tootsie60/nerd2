@@ -119,11 +119,52 @@ def one_game(request, id):
     return render(request, 'one_game.html', context)
 
 
-def your_games(request):
+def edit(request, game_id):
+    one_game = Game.objects.get(id=game_id)
     context = {
-        'current_user': User.objects.get(id=request.session['user_id']),
-        'your_games': Game.objects.all().filter(id=request.session['user_id']),
+        'game': one_game
 
+    }
+
+    return render(request, 'edit.html', context)
+
+
+def update(request, id):
+    if 'user_id' not in request.session:
+        return redirect('/')
+    # # game update
+    # to_update = Game.objects.get(id=id)
+    # # update each field
+    # to_update.gameType = request.POST['gameType']
+    # to_update.date = request.POST['date']
+    # to_update.startTime = request.POST['startTime']
+    # to_update.endTime = request.POST['endTime']
+    # to_update.location = request.POST['location']
+    # to_update.notes = request.POST['notes']
+    # to_update.save()
+        # game update
+    to_update = Game.objects.filter(id=id)[0]
+    # update each field
+    to_update.gameType = request.POST['gameType']
+    to_update.date = request.POST['date']
+    to_update.startTime = request.POST['startTime']
+    to_update.endTime = request.POST['endTime']
+    to_update.location = request.POST['location']
+    to_update.notes = request.POST['notes']
+    to_update.save()
+
+    print(to_update)
+    
+
+    return redirect('/yours')
+
+
+def your_games(request):
+    this_user = User.objects.get(id = request.session['user_id'])
+    context = {
+         'current_user': User.objects.get(id=request.session['user_id']),
+        #'your_games': Game.objects.all().filter(creator_id = request.session['user_id'])
+       'your_games' : Game.objects.filter(creator = this_user)
     }
     return render(request, 'your_games.html', context)
 

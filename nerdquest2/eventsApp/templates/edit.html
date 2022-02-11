@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Game</title>
+    {% load static %}
+    <link rel="stylesheet" href="#" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+      integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="heading">
+        <h1>Hi {{user.first_name}} {{user.last_name}}!</h1>
+        <a href="/logout">Logout</a>
+      </div>
+      {% if messages %}
+      {% for message in messages %} {{message}} {% endfor %}
+      {%endif%}
+
+      <form class="card p-3 bg-light" action="/update/{{game.id}}" method="POST">
+        {% csrf_token %}
+        <div class=" ">
+          <label for="gameType">Type of Game:</label>
+          <input type="text" name="gameType" id="gameType" value="{{game.gameType}}" />
+        </div>
+        {% comment %} Date of Event {% endcomment %}
+        <div class=" ">
+          <label for="date">Game Date:</label>
+          <input type="date" name="date" id="" value="{{game.date|date:'Y-m-d'}}" />
+        </div>
+        <div class=" ">
+          <label for="start">Game Starting Time:</label>
+          <input type="time" name="startTime" id="start" value="{{game.startTime|time:'H:i'}}" />
+        </div>
+
+        <div class=" ">
+          <label for="end">Game Ending Time:</label>
+          <input type="time" name="endTime" id="end" value="{{game.endTime|time:'H:i'}}" />
+        </div>
+        <div class=" ">
+          <label for="location">Location:</label>
+          <input type="text" name="location" id="location" value="{{game.location}}"/>
+        </div>
+
+        <div class=" ">
+          <label for="notes">Description:</label>
+          <input type="textarea" name="notes" id="notes" value="{{game.notes}}" />
+        </div>
+
+        <div class=" ">
+          <a href="/games">Cancel</a>
+        </div>
+        <div class=" ">
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
