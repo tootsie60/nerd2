@@ -119,6 +119,35 @@ def one_game(request, id):
     return render(request, 'one_game.html', context)
 
 
+def edit(request, id):
+    one_game = Game.objects.get(id=request.session['user_id'])
+    context = {
+        'game': one_game
+
+    }
+
+    return render(request, 'edit.html', context)
+
+
+def update(request, id):
+    if 'user_id' not in request.session:
+        return redirect('/')
+    # game update
+    to_update = Game.objects.get(id=id)
+    # update each field
+    to_update.gameType = request.POST['gameType']
+    to_update.date = request.POST['date']
+    to_update.startTime = request.POST['startTime']
+    to_update.endTime = request.POST['endTime']
+    to_update.location = request.POST['location']
+    to_update.notes = request.POST['notes']
+    to_update.save()
+    print(to_update)
+    
+
+    return redirect('/yours')
+
+
 def your_games(request):
     context = {
         'current_user': User.objects.get(id=request.session['user_id']),

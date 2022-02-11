@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edit Game</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="#" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
@@ -43,16 +43,16 @@
         {% comment %} Date of Event {% endcomment %}
         <div class=" ">
           <label for="date">Game Date:</label>
-          <input type="date" name="date" id="" value="{{game.date||date:"SHORT_DATE_FORMAT"}}" />
+          <input type="date" name="date" id="" value="{{game.date}}" />
         </div>
         <div class=" ">
           <label for="start">Game Starting Time:</label>
-          <input type="time" name="startTime" id="start" value={{ game.startTime|time:"TIME_FORMAT" }} />
+          <input type="time" name="startTime" id="start" value={{  value|time:"H:i"}} />
         </div>
 
         <div class=" ">
           <label for="end">Game Ending Time:</label>
-          <input type="time" name="endTime" id="end" value="{{game.endTime|time: "TIME_FORMAT"}}" />
+          <input type="time" name="endTime" id="end" value="{{"H:i"}}" />
         </div>
         <div class=" ">
           <label for="location">Location:</label>
