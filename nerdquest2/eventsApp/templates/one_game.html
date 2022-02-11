@@ -30,9 +30,12 @@
             <h3>Game Event Creator:</h3>
             <h3>{{one_game.creator.first_name}} {{one_game.creator.last_name}}</h3>
             {% if user in one_game.participants.all %}
-            <a class="btn btn-danger" href="/leave/{{one_game.id}}">Leave    Game </a>
+            <a class="btn btn-danger" href="/leave/{{one_game.id}}">Leave Game </a>
+            <a class="btn btn-primary" href="/edit/{{one_game.id}}">Edit Game</a>
+            <a class="btn btn-primary" href="/delete/{{one_game.id}}">Delete Game</a>
             {% else %}
             <a class="btn btn-primary" href="/join/{{one_game.id}}">Join Game</a>
+            
             {% endif %}
             <h3>Game Participants:</h3>
             <ul>
